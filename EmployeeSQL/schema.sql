@@ -55,8 +55,8 @@ CREATE TABLE "dept_managers" (
 -- salaries table creation, serial key used as primary key because emp_id is a foreign key
 CREATE TABLE "salaries" (
     "key" SERIAL,
-    "emp_id" int   NOT NULL,
-    "salary" int   NOT NULL,
+    "emp_id" INT   NOT NULL,
+    "salary" INT   NOT NULL,
     CONSTRAINT "pk_salaries" PRIMARY KEY (
         "key"
      )
