@@ -19,6 +19,7 @@ CREATE TABLE "titles" (
 );
 
 -- employees table creation, employee id (emp_id) set as primary key
+-- hire date is in varchar format because it was not in correct format for sql date format
 CREATE TABLE "employees" (
     "emp_id" INT(6)   NOT NULL,
     "emp_title" VARCHAR(5)   NOT NULL,
