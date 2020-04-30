@@ -2,8 +2,8 @@
 
 -- department table creation, dept_id set as primary key
 CREATE TABLE "department" (
-    "dept_id" VARCHAR   NOT NULL,
-    "dept_name" VARCHAR   NOT NULL,
+    "dept_id" VARCHAR(4)   NOT NULL,
+    "dept_name" VARCHAR(30)   NOT NULL,
     CONSTRAINT "pk_department" PRIMARY KEY (
         "dept_id"
      )
@@ -11,8 +11,8 @@ CREATE TABLE "department" (
 
 -- titles table creation, title_id set as primary key
 CREATE TABLE "titles" (
-    "title_id" VARCHAR   NOT NULL,
-    "title" VARCHAR   NOT NULL,
+    "title_id" VARCHAR(5)   NOT NULL,
+    "title" VARCHAR(30)   NOT NULL,
     CONSTRAINT "pk_titles" PRIMARY KEY (
         "title_id"
      )
@@ -20,13 +20,13 @@ CREATE TABLE "titles" (
 
 -- employees table creation, employee id (emp_id) set as primary key
 CREATE TABLE "employees" (
-    "emp_id" INT   NOT NULL,
-    "emp_title" VARCHAR   NOT NULL,
-    "birth_date" VARCHAR   NOT NULL,
-    "first_name" VARCHAR   NOT NULL,
-    "last_name" VARCHAR   NOT NULL,
+    "emp_id" INT(6)   NOT NULL,
+    "emp_title" VARCHAR(5)   NOT NULL,
+    "birth_date" VARCHAR(10)   NOT NULL,
+    "first_name" VARCHAR(50)   NOT NULL,
+    "last_name" VARCHAR(50)   NOT NULL,
     "sex" VARCHAR(1)   NOT NULL,
-    "hire_date" VARCHAR   NOT NULL,
+    "hire_date" VARCHAR(10)   NOT NULL,
     CONSTRAINT "pk_employees" PRIMARY KEY (
         "emp_id"
      )
@@ -35,8 +35,8 @@ CREATE TABLE "employees" (
 -- department employee table creation, serial key used as primary key due to both columns being foreign keys
 CREATE TABLE "dept_emp" (
     "key" SERIAL,
-    "emp_id" INT   NOT NULL,
-    "dept_id" VARCHAR   NOT NULL,
+    "emp_id" INT(6)   NOT NULL,
+    "dept_id" VARCHAR(4)   NOT NULL,
     CONSTRAINT "pk_dept_emp" PRIMARY KEY (
         "key"
      )
@@ -45,8 +45,8 @@ CREATE TABLE "dept_emp" (
 -- department managers table creation, serial key used as primary key due to both columns being foreign keys
 CREATE TABLE "dept_managers" (
     "key" SERIAL,
-    "dept_id" VARCHAR   NOT NULL,
-    "emp_id" INT   NOT NULL,
+    "dept_id" VARCHAR(4)   NOT NULL,
+    "emp_id" INT(6)   NOT NULL,
     CONSTRAINT "pk_dept_managers" PRIMARY KEY (
         "key"
      )
@@ -55,7 +55,7 @@ CREATE TABLE "dept_managers" (
 -- salaries table creation, serial key used as primary key because emp_id is a foreign key
 CREATE TABLE "salaries" (
     "key" SERIAL,
-    "emp_id" INT   NOT NULL,
+    "emp_id" INT(6)   NOT NULL,
     "salary" INT   NOT NULL,
     CONSTRAINT "pk_salaries" PRIMARY KEY (
         "key"
